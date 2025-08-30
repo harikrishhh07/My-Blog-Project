@@ -1,15 +1,22 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import image1 from './assets/Image1.jpg';
+import image from './assets/image.jpg';
+
 export const Card1 = () => {
   const navigate = useNavigate();
+
+  const handleImageError = (e) => {
+    console.log('Image failed to load, using fallback');
+    e.target.style.display = 'none';
+  };
 
   return (
     <div className="max-w-xl mx-auto mt-16 bg-white rounded-xl shadow-lg overflow-hidden border border-emerald-300 p-8">
       <img
         className="w-full h-80 object-cover rounded"
-        src={image1}
+        src={image}
         alt="AI in Education"
+        onError={handleImageError}
       />
       <h2 className="text-3xl font-bold text-emerald-700 mt-6 mb-4">The Future of Education in AI</h2>
       <p className="text-gray-700 text-lg mb-4">

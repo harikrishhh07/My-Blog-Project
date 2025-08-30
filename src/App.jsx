@@ -7,7 +7,7 @@ import { useNavigate, Routes, Route } from 'react-router-dom';
 import Card1 from "./Card1";
 import Card2 from "./Card2";
 import Card3 from "./Card3";
-import image1 from "./assets/Image1.jpg";
+import image from './assets/image.jpg';
 import image2 from './assets/image2.jpg';
 import image3 from './assets/image3.jpg';
 import About from "./About";
@@ -68,7 +68,7 @@ function BlogPage() {
         <Blog
           title="The Future of AI in Education"
           description="Artificial Intelligence is revolutionizing classrooms by making learning more personalized and inclusive. From smart tutors to accessibility tools, AI is shaping the future of education."
-          image={image1}
+          image={image}
           buttonText="Read More"
           onReadMore={() => navigate("/card1")}
         />
