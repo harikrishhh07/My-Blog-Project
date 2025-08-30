@@ -19,16 +19,16 @@ function Home() {
   return (
     <>
       <Navbar />
-      <h1 className="flex justify-center items-center font-bold text-5xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-600 to-emerald-900 drop-shadow-lg p-4 
-        border-4 border-emerald-700 rounded-2xl shadow-lg 
+      <h1 className="flex justify-center items-center font-bold text-2xl md:text-4xl lg:text-5xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-600 to-emerald-900 drop-shadow-lg p-2 md:p-4 
+        border-2 md:border-4 border-emerald-700 rounded-xl md:rounded-2xl shadow-lg mx-4 md:mx-8
         transition-all duration-500 hover:border-emerald-400 hover:shadow-emerald-500 hover:scale-105">
         WELCOME TO MY BLOG
       </h1>
-      <h2 className="flex justify-center items-center font-bold text-2xl font-serif text-emerald-600 mt-4 transition-transform duration-300 hover:scale-110 hover:text-emerald-800">
+      <h2 className="flex justify-center items-center font-bold text-lg md:text-xl lg:text-2xl font-serif text-emerald-600 mt-4 px-4 transition-transform duration-300 hover:scale-110 hover:text-emerald-800">
         ✨ Discover Amazing Content ✨
       </h2>
 
-      <p className="max-w-3xl mx-auto text-center mt-4 text-lg font-serif text-emerald-500 leading-relaxed 
+      <p className="max-w-3xl mx-auto text-center mt-4 text-sm md:text-base lg:text-lg font-serif text-emerald-500 leading-relaxed px-4 md:px-8
         border-b-2 border-emerald-400 pb-4 
         transition-all duration-500 hover:border-emerald-600 hover:text-emerald-700">
         Discover inspiring blogs and innovative projects from passionate 
@@ -40,12 +40,12 @@ function Home() {
 
       <div className="flex justify-center items-center h-screen bg-black relative">
         <Spline
-          className="scale-110"
+          className="scale-75 md:scale-90 lg:scale-110"
           scene="https://prod.spline.design/R1xRNZGEsoJdc2xn/scene.splinecode"
         />
         <button
           onClick={() => navigate("/blog")}
-          className="absolute top-[5%] left-[50%] -translate-x-1/2 -translate-y-1/2 px-6 py-3 bg-emerald-600 text-white rounded-full transition-all duration-300 hover:bg-emerald-700 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400"
+          className="absolute top-[5%] left-[50%] -translate-x-1/2 -translate-y-1/2 px-4 md:px-6 py-2 md:py-3 bg-emerald-600 text-white rounded-full text-sm md:text-base transition-all duration-300 hover:bg-emerald-700 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400"
         >
           EXPLORE BLOGS
         </button>
@@ -58,13 +58,13 @@ function BlogPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col py-10 px-12 relative">
-      <h1 className="self-center font-bold text-5xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-600 to-emerald-900 drop-shadow-lg p-4
-        border-4 border-emerald-700 rounded-2xl shadow-lg
-        transition-all duration-500 hover:border-emerald-400 hover:shadow-emerald-500 hover:scale-105 mb-12">
+    <div className="flex flex-col py-6 md:py-10 px-4 md:px-8 lg:px-12 relative">
+      <h1 className="self-center font-bold text-2xl md:text-4xl lg:text-5xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-600 to-emerald-900 drop-shadow-lg p-2 md:p-4
+        border-2 md:border-4 border-emerald-700 rounded-xl md:rounded-2xl shadow-lg
+        transition-all duration-500 hover:border-emerald-400 hover:shadow-emerald-500 hover:scale-105 mb-8 md:mb-12 text-center">
         EXPLORE MY BLOGS
       </h1>
-      <div className="flex flex-row gap-40">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-40">
         <Blog
           title="The Future of AI in Education"
           description="Artificial Intelligence is revolutionizing classrooms by making learning more personalized and inclusive. From smart tutors to accessibility tools, AI is shaping the future of education."
@@ -90,7 +90,7 @@ function BlogPage() {
         />
       </div>
       <button
-        className="absolute top-[120%] left-[50%] -translate-x-1/2 -translate-y-1/2 px-6 py-3 bg-emerald-600 text-white rounded-full transition-all duration-300 hover:bg-emerald-700 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400"
+        className="absolute top-[120%] left-[50%] -translate-x-1/2 -translate-y-1/2 px-4 md:px-6 py-2 md:py-3 bg-emerald-600 text-white rounded-full text-sm md:text-base transition-all duration-300 hover:bg-emerald-700 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400"
         onClick={() => navigate("/")}
       >
         Back to Home
