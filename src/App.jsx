@@ -7,7 +7,7 @@ import { useNavigate, Routes, Route } from 'react-router-dom';
 import Card1 from "./Card1";
 import Card2 from "./Card2";
 import Card3 from "./Card3";
-import image1 from "./assets/image1.jpg";
+import image1 from "./assets/Image1.jpg";
 import image2 from './assets/image2.jpg';
 import image3 from './assets/image3.jpg';
 import About from "./About";

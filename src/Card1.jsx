@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import image1 from './assets/image1.jpg';
+import image1 from './assets/Image1.jpg';
 export const Card1 = () => {
   const navigate = useNavigate();
 
