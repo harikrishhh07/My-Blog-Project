@@ -6,7 +6,7 @@ export const Contact = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="max-w-sm md:max-w-lg mx-auto mt-8 md:mt-16 bg-white rounded-3xl shadow-lg border border-emerald-300 p-4 md:p-6 lg:p-8 mx-4 md:mx-auto">
+    <div className="max-w-sm md:max-w-lg mx-auto mt-8 md:mt-16 bg-white rounded-3xl shadow-lg border border-emerald-300 p-4 md:p-6 lg:p-8 px-4">
       <img
         src={myImage}
         alt="My Profile"

@@ -2,16 +2,10 @@ import React from "react";
 import './index.css';
 import Navbar from "./components/Navbar";
 import Spline from '@splinetool/react-spline';
-import { Blog } from "./components/Blog";
-import { useNavigate, Routes, Route } from 'react-router-dom';
-import Card1 from "./Card1";
-import Card2 from "./Card2";
-import Card3 from "./Card3";
-import image from './assets/image.jpg';
-import image2 from './assets/image2.jpg';
-import image3 from './assets/image3.jpg';
+import { useNavigate, Routes, Route, Link } from 'react-router-dom';
 import About from "./About";
 import Contact from "./components/contact";
+import Launch from "./Launch";
 
 function Home() {
   const navigate = useNavigate();
@@ -22,73 +16,44 @@ function Home() {
       <h1 className="flex justify-center items-center font-bold text-2xl md:text-4xl lg:text-5xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-600 to-emerald-900 drop-shadow-lg p-2 md:p-4 
         border-2 md:border-4 border-emerald-700 rounded-xl md:rounded-2xl shadow-lg mx-4 md:mx-8
         transition-all duration-500 hover:border-emerald-400 hover:shadow-emerald-500 hover:scale-105">
-        WELCOME TO MY BLOG
+        CREATE,COLLABORATE,INNOVATE
       </h1>
-      <h2 className="flex justify-center items-center font-bold text-lg md:text-xl lg:text-2xl font-serif text-emerald-600 mt-4 px-4 transition-transform duration-300 hover:scale-110 hover:text-emerald-800">
-        ✨ Discover Amazing Content ✨
+      <h2 className="flex justify-center items-center font-medium text-base md:text-xl lg:text-2xl font-serif text-emerald-300 mt-4 px-4 text-center tracking-wide transition-transform duration-300 hover:scale-105 hover:text-emerald-200">
+        A modern whiteboard app for drawing, brainstorming, and real-time collaboration.
       </h2>
 
-      <p className="max-w-3xl mx-auto text-center mt-4 text-sm md:text-base lg:text-lg font-serif text-emerald-500 leading-relaxed px-4 md:px-8
-        border-b-2 border-emerald-400 pb-4 
-        transition-all duration-500 hover:border-emerald-600 hover:text-emerald-700">
-        Discover inspiring blogs and innovative projects from passionate 
-        <span className="font-semibold text-emerald-800"> second-year students</span>.
-        <br />
-        Explore the latest in <span className="underline decoration-emerald-400">web development</span>, 
-        learn new technologies, and get inspired by creative solutions.
+      <p className="max-w-3xl mx-auto text-center mt-3 text-sm md:text-base lg:text-lg font-serif text-emerald-400 leading-relaxed px-4 md:px-8 border-b border-emerald-700/50 pb-4">
+        Create shapes, draw freely, and work together seamlessly with your team.
       </p>
-
-      <div className="flex justify-center items-center h-screen bg-black relative">
+      {/* Launch button centered with hover animation */}
+      <div className="flex justify-center mt-8 px-4">
+        <button
+          onClick={() => navigate("/launch", { state: { autoConnect: true } })}
+          className="w-full max-w-1 sm:max-w-sm md:w-auto px-2 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-emerald-500 to-emerald-700 hover:from-emerald-400 hover:to-emerald-600 text-white rounded-full text-sm sm:text-base md:text-xl font-semibold tracking-wide shadow-lg shadow-emerald-900/40 ring-2 ring-emerald-400/40 transition duration-200 sm:duration-300 motion-safe:hover:scale-105 sm:motion-safe:hover:scale-110 motion-safe:hover:-translate-y-0.5 hover:shadow-emerald-500/60 active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400/50"
+        >
+          LAUNCH WHITE BOARD
+        </button>
+      </div>
+      <div className="flex justify-center items-center h-screen relative bg-gradient-to-b from-black via-emerald-950/40 to-black">
         <Spline
-          className="scale-75 md:scale-90 lg:scale-110"
+          className="scale-75 md:scale-90 lg:scale-110 opacity-90"
           scene="https://prod.spline.design/R1xRNZGEsoJdc2xn/scene.splinecode"
         />
-        <button
-          onClick={() => navigate("/blog")}
-          className="absolute top-[5%] left-[50%] -translate-x-1/2 -translate-y-1/2 px-4 md:px-6 py-2 md:py-3 bg-emerald-600 text-white rounded-full text-sm md:text-base transition-all duration-300 hover:bg-emerald-700 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400"
-        >
-          EXPLORE BLOGS
-        </button>
+       
       </div>
     </>
   );
 }
 
-function BlogPage() {
+function LaunchPage() {
   const navigate = useNavigate();
 
   return (
     <div className="flex flex-col py-6 md:py-10 px-4 md:px-8 lg:px-12 relative">
-      <h1 className="self-center font-bold text-2xl md:text-4xl lg:text-5xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-600 to-emerald-900 drop-shadow-lg p-2 md:p-4
-        border-2 md:border-4 border-emerald-700 rounded-xl md:rounded-2xl shadow-lg
-        transition-all duration-500 hover:border-emerald-400 hover:shadow-emerald-500 hover:scale-105 mb-8 md:mb-12 text-center">
-        EXPLORE MY BLOGS
-      </h1>
-      <div className="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-40">
-        <Blog
-          title="The Future of AI in Education"
-          description="Artificial Intelligence is revolutionizing classrooms by making learning more personalized and inclusive. From smart tutors to accessibility tools, AI is shaping the future of education."
-          image={image}
-          buttonText="Read More"
-          onReadMore={() => navigate("/card1")}
-        />
+      <Link to={Launch} className="self-center font-bold text-2xl md:text-4xl lg:text-5xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-600 to-emerald-900 drop-shadow-lg p-2 md:p-4 border-2 md:border-4 border-emerald-700 rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 hover:border-emerald-400 hover:shadow-emerald-500 hover:scale-105 mb-8 md:mb-12 text-center">
+          Collaborative Whiteboard
+      </Link>
 
-        <Blog
-          title="Sustainable Engineering for a Better Tomorrow"
-          description="Engineering innovations are driving sustainability. Learn how renewable energy, green design, and eco-friendly technologies are creating a better, greener world."
-          image={image2}
-          buttonText="Explore"
-          onReadMore={() => navigate("/card2")}
-        />
-
-        <Blog
-          title="The Evolution of Computers"
-          description="From room-sized machines to sleek laptops and powerful smartphones, computers have transformed every aspect of human life. Explore how computing power continues to grow and shape the future."
-          image={image3}
-          buttonText="Start Learning"
-          onReadMore={() => navigate("/card3")}
-        />
-      </div>
       <button
         className="absolute top-[120%] left-[50%] -translate-x-1/2 -translate-y-1/2 px-4 md:px-6 py-2 md:py-3 bg-emerald-600 text-white rounded-full text-sm md:text-base transition-all duration-300 hover:bg-emerald-700 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400"
         onClick={() => navigate("/")}
@@ -104,10 +69,9 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/blog" element={<BlogPage />} />
-      <Route path="/card1" element={<Card1 />} />
-      <Route path="/card2" element={<Card2 />} />
-      <Route path="/card3" element={<Card3 />} />
+      <Route path="/launch" element={<LaunchPage />} />
+      <Route path="/launch" element={<Launch />} />
+      {/** Card routes removed */}
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>

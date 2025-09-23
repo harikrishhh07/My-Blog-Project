@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="bg-black p-2 md:p-4 text-white">
       <div className="flex justify-between items-center">
-        <h1 className="text-xl md:text-2xl font-bold tracking-wide text-emerald-300">My Blog</h1>
+        <h1 className="text-xl md:text-2xl font-bold tracking-wide text-emerald-300">WHITE BOARD APP</h1>
         
         {/* Mobile menu button */}
         <button 
