@@ -17,14 +17,14 @@ export const About = () => {
 Traditional brainstorming and collaboration often require physical whiteboards or separate tools, which can be inefficient or inaccessible for remote teams. This project solves this problem by providing a digital platform where teams can collaborate seamlessly in real-time from any location.
 <br />Objectives:
 <br />To implement a real-time collaborative drawing environment.
-To learn and apply Java socket programming for networked applications.
+<br />To learn and apply Java socket programming for networked applications.
 <br />To design an intuitive and user-friendly GUI for efficient collaboration.
 <br />To integrate multi-user presence tracking and live updates.
 Applications:
 <br />Education: Teachers and students can collaborate on lessons and projects.
 <br />Remote Teams: Brainstorming, flowcharts, and project planning.
 <br />Creative Work: Designers and artists can co-create sketches and mockups.
-Workshops & Hackathons: Real-time interactive sessions for ideas sharing.
+<br />Workshops & Hackathons: Real-time interactive sessions for ideas sharing.
           </p>
         </div>
         

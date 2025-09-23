@@ -22,14 +22,14 @@ function Home() {
         A modern whiteboard app for drawing, brainstorming, and real-time collaboration.
       </h2>
 
-      <p className="max-w-3xl mx-auto text-center mt-3 text-sm md:text-base lg:text-lg font-serif text-emerald-400 leading-relaxed px-4 md:px-8 border-b border-emerald-700/50 pb-4">
+      <p className="max-w mx-auto text-center mt-3 text-9xl md:text-base lg:text-lg font-serif text-emerald-400 leading-relaxed px-4 md:px-8 border-b border-emerald-700/50 pb-4">
         Create shapes, draw freely, and work together seamlessly with your team.
       </p>
       {/* Launch button centered with hover animation */}
-      <div className="flex justify-center mt-8 px-4">
+      <div className="flex justify-center mt-6 px-9">
         <button
           onClick={() => navigate("/launch", { state: { autoConnect: true } })}
-          className="w-full max-w-1 sm:max-w-sm md:w-auto px-2 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-emerald-500 to-emerald-700 hover:from-emerald-400 hover:to-emerald-600 text-white rounded-full text-sm sm:text-base md:text-xl font-semibold tracking-wide shadow-lg shadow-emerald-900/40 ring-2 ring-emerald-400/40 transition duration-200 sm:duration-300 motion-safe:hover:scale-105 sm:motion-safe:hover:scale-110 motion-safe:hover:-translate-y-0.5 hover:shadow-emerald-500/60 active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400/50"
+          className="w-full max-w-3 sm:max-w-sm md:w-auto px-2 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-emerald-500 to-emerald-700 hover:from-emerald-400 hover:to-emerald-600 text-white rounded-full text-sm sm:text-base md:text-xl font-semibold tracking-wide shadow-lg shadow-emerald-900/40 ring-2 ring-emerald-400/40 transition duration-200 sm:duration-300 motion-safe:hover:scale-105 sm:motion-safe:hover:scale-110 motion-safe:hover:-translate-y-0.5 hover:shadow-emerald-500/60 active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-400/50"
         >
           LAUNCH WHITE BOARD
         </button>
