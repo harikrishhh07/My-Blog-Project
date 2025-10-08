@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import './index.css';
 import Navbar from "./components/Navbar";
-import Spline from '@splinetool/react-spline';
-import { useNavigate, Routes, Route, Link } from 'react-router-dom';
-import About from "./About";
-import Contact from "./components/contact";
-import Launch from "./Launch";
+import { useNavigate, Routes, Route } from 'react-router-dom';
+// Heavy component and route-level components are lazy-loaded to reduce initial bundle size
+const Spline = lazy(() => import('@splinetool/react-spline'));
+const About = lazy(() => import('./About'));
+const Contact = lazy(() => import('./components/contact'));
 
 function Home() {
   const navigate = useNavigate();
@@ -35,11 +35,12 @@ function Home() {
         </button>
       </div>
       <div className="flex justify-center items-center h-screen relative bg-gradient-to-b from-black via-emerald-950/40 to-black">
-        <Spline
-          className="scale-75 md:scale-90 lg:scale-110 opacity-90"
-          scene="https://prod.spline.design/R1xRNZGEsoJdc2xn/scene.splinecode"
-        />
-       
+        <Suspense fallback={<div className="text-white">Loading 3D scene...</div>}>
+          <Spline
+            className="scale-75 md:scale-90 lg:scale-110 opacity-90"
+            scene="https://prod.spline.design/R1xRNZGEsoJdc2xn/scene.splinecode"
+          />
+        </Suspense>
       </div>
     </>
   );
@@ -50,9 +51,9 @@ function LaunchPage() {
 
   return (
     <div className="flex flex-col py-6 md:py-10 px-4 md:px-8 lg:px-12 relative">
-      <Link to={Launch} className="self-center font-bold text-2xl md:text-4xl lg:text-5xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-600 to-emerald-900 drop-shadow-lg p-2 md:p-4 border-2 md:border-4 border-emerald-700 rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 hover:border-emerald-400 hover:shadow-emerald-500 hover:scale-105 mb-8 md:mb-12 text-center">
-          Collaborative Whiteboard
-      </Link>
+      <div className="self-center font-bold text-2xl md:text-4xl lg:text-5xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-600 to-emerald-900 drop-shadow-lg p-2 md:p-4 border-2 md:border-4 border-emerald-700 rounded-xl md:rounded-2xl shadow-lg transition-all duration-500 hover:border-emerald-400 hover:shadow-emerald-500 hover:scale-105 mb-8 md:mb-12 text-center">
+        Collaborative Whiteboard
+      </div>
 
       <button
         className="absolute top-[120%] left-[50%] -translate-x-1/2 -translate-y-1/2 px-4 md:px-6 py-2 md:py-3 bg-emerald-600 text-white rounded-full text-sm md:text-base transition-all duration-300 hover:bg-emerald-700 hover:scale-105 hover:shadow-2xl hover:shadow-emerald-400"
@@ -67,14 +68,14 @@ function LaunchPage() {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/launch" element={<LaunchPage />} />
-      <Route path="/launch" element={<Launch />} />
-      {/** Card routes removed */}
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
+    <Suspense fallback={<div className="p-4 text-emerald-700">Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/launch" element={<LaunchPage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </Suspense>
   );
 }
 
